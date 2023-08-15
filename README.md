@@ -17,3 +17,5 @@ I want to see where i am on a map
 
 - Initial setup of the project, parcel, tailwindcss, folder structure.
 - Added screensize in tailwind config file
+- Added color palette that extends color on Tailwind css
+- Start building frontpage and possible gradient background
