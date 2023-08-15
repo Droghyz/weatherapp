@@ -19,3 +19,5 @@ I want to see where i am on a map
 - Added screensize in tailwind config file
 - Added color palette that extends color on Tailwind css
 - Start building frontpage and possible gradient background
+- Added JS Model View Controller
+- Added logic for get latitude and longitude
