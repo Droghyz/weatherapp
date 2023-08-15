@@ -16,3 +16,4 @@ I want to see where i am on a map
 # 15/08/2023:
 
 - Initial setup of the project, parcel, tailwindcss, folder structure.
+- Added screensize in tailwind config file
