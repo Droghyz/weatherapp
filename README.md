@@ -21,3 +21,8 @@ I want to see where i am on a map
 - Start building frontpage and possible gradient background
 - Added JS Model View Controller
 - Added logic for get latitude and longitude
+
+# 16/08/23:
+
+- Added the fetch request for the meteo app and created the essential variables.
+- Created variable of DOM on view.js.
