@@ -26,3 +26,7 @@ I want to see where i am on a map
 
 - Added the fetch request for the meteo app and created the essential variables.
 - Created variable of DOM on view.js.
+
+# 18/08/23:
+
+- Create basic card for mobile where to display values.

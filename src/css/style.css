@@ -10,3 +10,19 @@ COLORI:
   Mantis: #7AC74F
   Pistacchio: #A1CF6B
 */
+
+.card {
+  border: solid 2px black;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+
+.container-temp {
+  border: solid 2px black;
+  border-radius: 1rem;
+}
+
+.day-icon {
+  width: 16px;
+  height: 16px;
+}
