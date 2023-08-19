@@ -2,41 +2,15 @@ import "core-js/stable";
 import "regenerator-runtime/runtime.js";
 import * as leaflet from "./../../node_modules/leaflet/dist/leaflet.js";
 
-// export const getPosition = async function () {
-//   try {
-//     const pos = function (position) {
-//       const lat = position.coords.latitude;
-//       const lon = position.coords.longitude;
-//       getMeteo(lat, lon);
-//     };
-//     navigator.geolocation.getCurrentPosition(pos);
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
-
-// class Test{
-
-//   _getPosition(){
-//     if(navigator.geolocation)
-//       navigator.geolocation.getCurrentPosition(this._getMeteo.bind(this) , function(){
-//         console.error('Unable to get position');
-//       })
-//   }
-
-//   _getMeteo(position){
-//     const lat = position.coords.latitude;
-//     const lon = position.coords.longitude;
-
-//   }
-// }
-
 export const getPosition = function () {
-  navigator.geolocation.getCurrentPosition(function (pos) {
-    const lat = pos.coords.latitude;
-    const lon = pos.coords.longitude;
-    getMeteo(lat, lon);
-  });
+  navigator.geolocation.getCurrentPosition(getLatLon);
+};
+
+export const getLatLon = function (pos) {
+  const lat = pos.coords.latitude;
+  const lon = pos.coords.longitude;
+  getMeteo(lat, lon);
+  getMap(lat, lon);
 };
 
 export const getMeteo = async function (lat, lon) {
@@ -55,11 +29,23 @@ export const getMeteo = async function (lat, lon) {
     const tempMax = data.daily.temperature_2m_max;
     const tempMin = data.daily.temperature_2m_min;
     const probabilityRain = data.daily.precipitation_probability_max;
-
-    //
-
-    console.log(data.daily);
+    // Return object?
+    // return { latitude, longitude, days, tempMax, tempMin, probabilityRain };
   } catch (err) {
     console.error(err);
   }
+};
+
+export const getMap = async function (lat, lon) {
+  const map = L.map("map").setView([lat, lon], 13);
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  L.marker([lat, lon])
+    .addTo(map)
+    .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
+    .openPopup();
 };

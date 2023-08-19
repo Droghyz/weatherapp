@@ -30,3 +30,10 @@ I want to see where i am on a map
 # 18/08/23:
 
 - Create basic card for mobile where to display values.
+
+# 19/08/23 :
+
+- Almost fixed Temp and Icons
+- Added row of days
+- Added Map component inside the card
+- Modifyed geolocation API with external function

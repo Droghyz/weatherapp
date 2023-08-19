@@ -21,8 +21,15 @@ COLORI:
   border: solid 2px black;
   border-radius: 1rem;
 }
-
+.day {
+  font-size: 16px;
+}
 .day-icon {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
+}
+
+#map {
+  height: 300px;
+  border-radius: 1rem;
 }
