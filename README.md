@@ -37,3 +37,8 @@ I want to see where i am on a map
 - Added row of days
 - Added Map component inside the card
 - Modifyed geolocation API with external function
+
+# 30/08/23 :
+
+- Added API call for reverse-geolocalization
+- Update the DOM with the name of the city from the new API

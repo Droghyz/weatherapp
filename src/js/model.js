@@ -29,8 +29,27 @@ export const getMeteo = async function (lat, lon) {
     const tempMax = data.daily.temperature_2m_max;
     const tempMin = data.daily.temperature_2m_min;
     const probabilityRain = data.daily.precipitation_probability_max;
-    // Return object?
-    // return { latitude, longitude, days, tempMax, tempMin, probabilityRain };
+
+    //METTO TUTTO NELLA UI
+    console.log(data);
+    //Mi servono per trovare il nome del luogo e metterlo nella UI
+    //Usiamo questa API
+    // https://nominatim.org/release-docs/latest/api/Reverse/
+    const cityRequest = fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
+    );
+    const cityRes = await cityRequest;
+    const cityData = await cityRes.json();
+    const city = cityData.address.town;
+    document.querySelector(".city").textContent = city;
+
+    //array di giorni e temperature, da scompattare e sostituire nella UI
+    console.log(days);
+    console.log(tempMax);
+    console.log(tempMin);
+
+    //forse la levo la probabilità di pioggia
+    console.log(probabilityRain);
   } catch (err) {
     console.error(err);
   }
