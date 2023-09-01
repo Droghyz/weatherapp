@@ -68,7 +68,6 @@ class App {
       //array di giorni e temperature, da scompattare e sostituire nella UI
 
       //Ristrutturazione days:
-      console.log(days);
       const newDays = days.map((e) =>
         e.slice(5, 10).split("-").reverse().join("/")
       );
