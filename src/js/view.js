@@ -1,10 +1,10 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime.js";
+// import "core-js/stable";
+// import "regenerator-runtime/runtime.js";
 
-//VARIABLE DECLARATION FOR DOM
-const giorni = document.querySelector(".giorni");
-const temperature = document.querySelector(".temp");
-//
+// //VARIABLE DECLARATION FOR DOM
+// const giorni = document.querySelector(".giorni");
+// const temperature = document.querySelector(".temp");
+// //
 
-console.log(giorni);
-console.log(temperature);
+// console.log(giorni);
+// console.log(temperature);

@@ -13,23 +13,16 @@ I want to see where i am on a map
 
 ---
 
-# 15/08/2023:
+# 01/09/23 :
 
-- Initial setup of the project, parcel, tailwindcss, folder structure.
-- Added screensize in tailwind config file
-- Added color palette that extends color on Tailwind css
-- Start building frontpage and possible gradient background
-- Added JS Model View Controller
-- Added logic for get latitude and longitude
+- Fixed readme with cascading days
+- Restructuring code from MVC into single file
+-
 
-# 16/08/23:
+# 30/08/23 :
 
-- Added the fetch request for the meteo app and created the essential variables.
-- Created variable of DOM on view.js.
-
-# 18/08/23:
-
-- Create basic card for mobile where to display values.
+- Added API call for reverse-geolocalization
+- Update the DOM with the name of the city from the new API
 
 # 19/08/23 :
 
@@ -38,7 +31,20 @@ I want to see where i am on a map
 - Added Map component inside the card
 - Modifyed geolocation API with external function
 
-# 30/08/23 :
+# 18/08/23:
 
-- Added API call for reverse-geolocalization
-- Update the DOM with the name of the city from the new API
+- Create basic card for mobile where to display values.
+
+# 16/08/23:
+
+- Added the fetch request for the meteo app and created the essential variables.
+- Created variable of DOM on view.js.
+
+# 15/08/2023:
+
+- Initial setup of the project, parcel, tailwindcss, folder structure.
+- Added screensize in tailwind config file
+- Added color palette that extends color on Tailwind css
+- Start building frontpage and possible gradient background
+- Added JS Model View Controller
+- Added logic for get latitude and longitude
