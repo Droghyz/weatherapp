@@ -17,7 +17,7 @@ I want to see where i am on a map
 
 - Fixed readme with cascading days
 - Restructuring code from MVC into single file
--
+- Fixed dates on DOM with new dates
 
 # 30/08/23 :
 
