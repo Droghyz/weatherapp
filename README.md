@@ -13,23 +13,28 @@ I want to see where i am on a map
 
 ---
 
+# 03/09/23 :
+
+- Added lat and lon variable in global scope.
+- Restructured code and functions.
+
 # 01/09/23 :
 
-- Fixed readme with cascading days
-- Restructuring code from MVC into single file
-- Fixed dates on DOM with new dates
+- Fixed readme with cascading days.
+- Restructuring code from MVC into single file.
+- Fixed dates on DOM with new dates.
 
 # 30/08/23 :
 
-- Added API call for reverse-geolocalization
-- Update the DOM with the name of the city from the new API
+- Added API call for reverse-geolocalization.
+- Update the DOM with the name of the city from the new API.
 
 # 19/08/23 :
 
-- Almost fixed Temp and Icons
-- Added row of days
-- Added Map component inside the card
-- Modifyed geolocation API with external function
+- Almost fixed Temp and Icons.
+- Added row of days.
+- Added Map component inside the card.
+- Modifyed geolocation API with external function.
 
 # 18/08/23:
 
@@ -43,8 +48,8 @@ I want to see where i am on a map
 # 15/08/2023:
 
 - Initial setup of the project, parcel, tailwindcss, folder structure.
-- Added screensize in tailwind config file
-- Added color palette that extends color on Tailwind css
-- Start building frontpage and possible gradient background
-- Added JS Model View Controller
-- Added logic for get latitude and longitude
+- Added screensize in tailwind config file.
+- Added color palette that extends color on Tailwind css.
+- Start building frontpage and possible gradient background.
+- Added JS Model View Controller.
+- Added logic for get latitude and longitude.
