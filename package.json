@@ -2,6 +2,7 @@
   "name": "weatherapp",
   "version": "1.0.0",
   "description": "Weather application that shows also where are you in the map",
+  "default": "./src/**/index.html"
   "scripts": {
     "watch": "tailwindcss -i ./src/**/style.css -o ./dist/output.css --watch",
     "tailwind": "tailwindcss -i ./src/**/style.css -o ./dist/output.css",
