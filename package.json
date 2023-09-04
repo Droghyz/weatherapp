@@ -4,8 +4,8 @@
   "description": "Weather application that shows also where are you in the map",
   "default": "./src/**/index.html",
   "scripts": {
-    "watch": "tailwindcss -i ./src/**/style.css -o ./dist/output.css --watch",
-    "tailwind": "tailwindcss -i ./src/**/style.css -o ./dist/output.css",
+    "watch": "tailwindcss -i ./src/**/style.css -o ./src/tailwind/output.css --watch",
+    "tailwind": "tailwindcss -i ./src/**/style.css -o ./src/tailwind/output.css",
     "start": "parcel ./src/**/index.html",
     "build": "parcel build ./src/**/index.html --dist-dir ./dist"
   },

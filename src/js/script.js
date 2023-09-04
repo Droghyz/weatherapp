@@ -78,14 +78,19 @@ class App {
       const cityRes = await cityRequest;
       const cityData = await cityRes.json();
       const city = cityData.address.city;
+      const town = cityData.address.town;
       const village = cityData.address.village;
       console.log(cityData);
       // const village = cityData.address.village;
       //Da testare se funziona con tutte le città
-      if (!city) {
+      if (!city && !town) {
         document.querySelector(".city").textContent = village;
-      } else {
+      }
+      if (!village && !town) {
         document.querySelector(".city").textContent = city;
+      }
+      if (!city && !village) {
+        document.querySelector(".city").textContent = town;
       }
     } catch (err) {
       console.error(err);
