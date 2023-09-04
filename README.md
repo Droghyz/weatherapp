@@ -13,10 +13,17 @@ I want to see where i am on a map
 
 ---
 
+# 04/09/23:
+
+- Modify CSS and HTML for better visualization on Mobile.
+- First push on Netlify
+- Fixed problems on package.json
+
 # 03/09/23 :
 
 - Added lat and lon variable in global scope.
 - Restructured code and functions.
+- Finish updating the DOM with information from API's
 
 # 01/09/23 :
 

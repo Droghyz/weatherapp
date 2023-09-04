@@ -11,10 +11,26 @@ COLORI:
   Pistacchio: #A1CF6B
 */
 
+li {
+  list-style: none;
+}
+
+.meteo-container {
+  justify-content: space-between;
+}
+
+.giorni-list,
+.temp-list,
+.day-icon-list {
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
 .card {
   border: solid 2px black;
   margin: 0 auto;
   border-radius: 1rem;
+  width: 640px;
 }
 
 .container-temp {

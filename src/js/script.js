@@ -108,7 +108,7 @@ class App {
     const maxTemp = this.tempMax;
     temp.forEach(function (e, i) {
       if (i < maxTemp.length) {
-        e.textContent = Math.floor(maxTemp[i]) + ` °C`;
+        e.textContent = Math.floor(maxTemp[i]) + `°`;
       }
     });
   }
@@ -120,7 +120,7 @@ class App {
       //SOLE
       if (condition[i] >= 0 && condition[i] <= 3) {
         e.insertAdjacentHTML(
-          "beforeend",
+          "afterbegin",
           `<svg
              xmlns="http://www.w3.org/2000/svg"
              width="24"

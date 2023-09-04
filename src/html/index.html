@@ -32,35 +32,42 @@
         <div class="nome-città my-4">
           <h2 class="city text-3xl text-blue-700"></h2>
         </div>
-        <div class="container-temp m-4 p-4 flex flex-col items-center">
-          <div class="giorni-container flex space-x-2">
-            <p class="giorni">11/08</p>
-            <p class="giorni">12/08</p>
-            <p class="giorni">13/08</p>
-            <p class="giorni">14/08</p>
-            <p class="giorni">15/08</p>
-            <p class="giorni">16/08</p>
-            <p class="giorni">17/08</p>
-          </div>
-          <div class="temperature flex space-x-6">
-            <p class="temp">20°</p>
-            <p class="temp">20°</p>
-            <p class="temp">20°</p>
-            <p class="temp">20°</p>
-            <p class="temp">20°</p>
-            <p class="temp">20°</p>
-            <p class="temp">20°</p>
-          </div>
-          <div class="day-icon-container flex space-x-6">
+        <div class="container-temp flex flex-col items-center">
+          <div class="meteo-container">
+            <!-- GIORNI -->
+            <ul class="giorni-list flex space-x-2.5">
+              <li class="giorni"></li>
+              <li class="giorni"></li>
+              <li class="giorni"></li>
+              <li class="giorni"></li>
+              <li class="giorni"></li>
+              <li class="giorni"></li>
+              <li class="giorni"></li>
+            </ul>
+            <!-- TEMPERATURE -->
+            <ul class="temp-list flex">
+              <li class="temp"></li>
+              <li class="temp"></li>
+              <li class="temp"></li>
+              <li class="temp"></li>
+              <li class="temp"></li>
+              <li class="temp"></li>
+              <li class="temp"></li>
+            </ul>
             <!-- ICONE IN BASE AL GIORNO -->
-            <span class="day-icon"></span>
-            <span class="day-icon"> </span>
-            <span class="day-icon"> </span>
-            <span class="day-icon"> </span>
-            <span class="day-icon"> </span>
-            <span class="day-icon"> </span>
-            <span class="day-icon"> </span>
+            <ul class="day-icon-list flex">
+              <li class="day-icon"></li>
+              <li class="day-icon"></li>
+              <li class="day-icon"></li>
+              <li class="day-icon"></li>
+              <li class="day-icon"></li>
+              <li class="day-icon"></li>
+              <li class="day-icon"></li>
+            </ul>
           </div>
+        </div>
+        <div>
+          <h2 class="text-3xl text-blue-700">You are here right now!</h2>
         </div>
         <div class="mappa" id="map"></div>
       </div>
