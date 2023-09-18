@@ -13,6 +13,11 @@ I want to see where i am on a map
 
 ---
 
+# 18/09/23:
+
+- Create new testing branch
+- Create new card
+
 # 04/09/23:
 
 - Modify CSS and HTML for better visualization on Mobile.
