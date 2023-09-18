@@ -8,6 +8,9 @@ const maxTempUi = document.querySelectorAll(".max-temp");
 const minTempUi = document.querySelectorAll(".min-temp");
 const dayIcon = document.querySelectorAll(".day-icon");
 
+//ANNO PER IL COPYRIGHT
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
 /////////////////////////////////////////////////
 
 class App {
