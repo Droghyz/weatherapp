@@ -18,6 +18,8 @@ I want to see where i am on a map
 - Create new testing branch
 - Create new card
 - Adding temp min
+- Adding new background + colors
+- Added footer with copyright
 
 # 04/09/23:
 
