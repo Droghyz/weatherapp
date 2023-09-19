@@ -627,6 +627,7 @@ COLORI:
   Yale Blue: #083D77
   Mantis: #7AC74F
   Pistacchio: #A1CF6B
+  T-MIN: #08b2e3
 */
 
 * {
@@ -692,7 +693,7 @@ ul {
 }
 
 .min-temp {
-  color: #083d77;
+  color: #08b2e3;
 }
 
 .space {

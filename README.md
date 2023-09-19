@@ -13,6 +13,11 @@ I want to see where i am on a map
 
 ---
 
+# 19/09/23:
+
+- New Temp Min Color
+- Push new version
+
 # 18/09/23:
 
 - Create new testing branch
