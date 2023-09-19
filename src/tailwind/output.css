@@ -539,24 +539,12 @@ video {
   margin-bottom: 1rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .flex {
   display: flex;
 }
 
-.h-9 {
-  height: 2.25rem;
-}
-
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-9 {
-  width: 2.25rem;
 }
 
 .flex-col {
@@ -565,10 +553,6 @@ video {
 
 .items-center {
   align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -645,15 +629,24 @@ li {
   height: 24px;
 }
 
+.map-container {
+  bottom: 0;
+}
+
 #map {
   height: 300px;
   border-radius: 1rem;
+}
+
+.container-temp {
+  height: 400px;
 }
 
 .card {
   border: 2px solid black;
   width: 360px;
   margin: 5px auto;
+  height: 800px;
   border-radius: 45px;
   box-shadow: 13px 8px 14px 0px #000000;
 }

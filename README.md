@@ -17,6 +17,7 @@ I want to see where i am on a map
 
 - New Temp Min Color
 - Push new version
+- A new UI is in developing... created a new UI branch
 
 # 18/09/23:
 

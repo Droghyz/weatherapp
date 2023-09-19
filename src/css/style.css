@@ -27,15 +27,24 @@ li {
   height: 24px;
 }
 
+.map-container {
+  bottom: 0;
+}
+
 #map {
   height: 300px;
   border-radius: 1rem;
+}
+
+.container-temp {
+  height: 400px;
 }
 
 .card {
   border: 2px solid black;
   width: 360px;
   margin: 5px auto;
+  height: 800px;
   border-radius: 45px;
   -webkit-box-shadow: 13px 8px 14px 0px #000000;
   box-shadow: 13px 8px 14px 0px #000000;
@@ -101,4 +110,5 @@ footer {
 /* Stile per il testo del footer */
 .footer-content {
   font-size: 14px;
+  è nuovo!!
 }
