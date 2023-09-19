@@ -9,37 +9,19 @@ COLORI:
   Yale Blue: #083D77
   Mantis: #7AC74F
   Pistacchio: #A1CF6B
+  T-MIN: #08b2e3
 */
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
 
 li {
   list-style: none;
 }
 
-.meteo-container {
-  justify-content: space-between;
-}
-
-.giorni-list,
-.temp-list,
-.day-icon-list {
-  justify-content: space-between;
-  margin-right: 1rem;
-}
-
-.card {
-  border: solid 2px black;
-  margin: 0 auto;
-  border-radius: 1rem;
-  width: 640px;
-}
-
-.container-temp {
-  border: solid 2px black;
-  border-radius: 1rem;
-}
-.day {
-  font-size: 16px;
-}
 .day-icon {
   width: 24px;
   height: 24px;
@@ -48,4 +30,75 @@ li {
 #map {
   height: 300px;
   border-radius: 1rem;
+}
+
+.card {
+  border: 2px solid black;
+  width: 360px;
+  margin: 5px auto;
+  border-radius: 45px;
+  -webkit-box-shadow: 13px 8px 14px 0px #000000;
+  box-shadow: 13px 8px 14px 0px #000000;
+}
+
+ul {
+  list-style: none;
+  justify-content: center;
+}
+
+.tmax,
+.days,
+.tmin,
+.icons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 45px;
+  padding: 10px;
+  -webkit-box-shadow: 13px 8px 14px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 13px 8px 14px 0px rgba(0, 0, 0, 0.55);
+}
+
+.giorni {
+  gap: 2px;
+}
+
+.giorni {
+  color: #000;
+}
+
+.max-temp {
+  color: #ec7505;
+}
+
+.min-temp {
+  color: #08b2e3;
+}
+
+.space {
+  padding: 10px;
+}
+
+/* Stile per il footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Stile per il testo del footer */
+.footer-content {
+  font-size: 14px;
 }

@@ -13,6 +13,19 @@ I want to see where i am on a map
 
 ---
 
+# 19/09/23:
+
+- New Temp Min Color
+- Push new version
+
+# 18/09/23:
+
+- Create new testing branch
+- Create new card
+- Adding temp min
+- Adding new background + colors
+- Added footer with copyright
+
 # 04/09/23:
 
 - Modify CSS and HTML for better visualization on Mobile.
