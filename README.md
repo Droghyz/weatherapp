@@ -17,6 +17,8 @@ I want to see where i am on a map
 
 - Added card and buttons for switching
 - Added logic for switching days
+- Added new information (winds speec + direction)
+- Added new informnation (probability Rain)
 
 # 19/09/23:
 

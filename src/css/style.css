@@ -25,6 +25,10 @@ li {
 .meteo-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-top: 60px;
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 5px;
 }
 
 .city {
@@ -42,11 +46,17 @@ li {
 .day-icon {
   width: 24px;
   height: 24px;
+  margin-left: 80%;
+}
+
+span {
+  grid-column: 1 / 2;
 }
 
 .bottoni {
+  margin-top: 20px;
   display: flex;
-  gap: 10px;
+  gap: 40px;
 }
 
 .btn-next,

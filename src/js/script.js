@@ -9,6 +9,8 @@ const minTempUi = document.querySelectorAll(".min-temp");
 const dayIcon = document.querySelectorAll(".day-icon");
 const btnAvanti = document.querySelector(".btn-next");
 const bntIndietro = document.querySelector(".btn-previous");
+const venti = document.querySelectorAll(".venti");
+const probPioggiaEl = document.querySelectorAll(".pioggia");
 
 //ANNO PER IL COPYRIGHT
 document.getElementById("current-year").textContent = new Date().getFullYear();
@@ -24,6 +26,9 @@ class App {
     this.tempMax = null;
     this.tempMin = null;
     this.weathercode = null;
+    this.ventoDirezione = null;
+    this.ventoForza = null;
+    this.probPioggia = null;
   }
 
   getPosition() {
@@ -54,7 +59,7 @@ class App {
     try {
       //Fetch Request
       const request = fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${this.lat}&longitude=${this.lon}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Europe%2FLondon`
+        `https://api.open-meteo.com/v1/forecast?latitude=${this.lat}&longitude=${this.lon}&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_max,windspeed_10m_max,winddirection_10m_dominant&timezone=Europe%2FLondon`
       );
       const res = await request;
       const data = await res.json();
@@ -64,11 +69,17 @@ class App {
       this.tempMax = data.daily.temperature_2m_max;
       this.tempMin = data.daily.temperature_2m_min;
       this.weathercode = data.daily.weathercode;
+      this.ventoDirezione = data.daily.winddirection_10m_dominant;
+      this.ventoForza = data.daily.windspeed_10m_max;
+      this.probPioggia = data.daily.precipitation_probability_max;
       //METTO TUTTO NELLA UI
       this.daysMarkup();
       this.tempMarkupMax();
       this.tempMarkupMin();
+      this.ventiMarkUp();
       this.conditionMarkup();
+      this.pioggiaMarkUp();
+
       ////////////////////////////////
     } catch (err) {
       console.error(err);
@@ -144,6 +155,52 @@ class App {
     minTempUi.forEach(function (e, i) {
       if (i < minTemp.length) {
         e.textContent = Math.floor(minTemp[i]) + `°`;
+      }
+    });
+  }
+
+  ventiMarkUp() {
+    const direzione = this.ventoDirezione;
+    const forza = this.ventoForza;
+    const windDirection = function (value) {
+      if (value >= 0 && value <= 45) {
+        return "Nord Est";
+      }
+      if (value >= 45 && value <= 90) {
+        return "Est";
+      }
+      if (value >= 90 && value <= 135) {
+        return "Sud Est";
+      }
+      if (value >= 135 && value <= 180) {
+        return "Sud";
+      }
+      if (value >= 180 && value <= 225) {
+        return "Sud Ovest";
+      }
+      if (value >= 225 && value <= 270) {
+        return "Ovest";
+      }
+      if (value >= 270 && value <= 315) {
+        return "Nord Ovest";
+      }
+      if (value >= 315 && value <= 360) {
+        return "Nord";
+      }
+    };
+    venti.forEach(function (e, i) {
+      if (i < direzione.length) {
+        e.textContent = `${forza[i]}Km/h ${windDirection(direzione[i])}`;
+      }
+    });
+  }
+
+  pioggiaMarkUp() {
+    const pioggia = this.probPioggia;
+    probPioggiaEl.forEach(function (e, i) {
+      if (i < pioggia.length) {
+        console.log(e, i);
+        e.textContent = `${pioggia[i]} %`;
       }
     });
   }
