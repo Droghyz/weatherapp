@@ -27,11 +27,23 @@
       <!-- LOGO -->
       <!-- FINISH LOGO -->
       <div class="card bg-white center">
-        <div class="nome-città my-4">
-          <h2 class="city text-3xl text-blue-700"></h2>
-        </div>
         <div class="container-temp flex flex-col items-center">
-          <div class="meteo-container">
+          <div class="meteo-card">
+            <h2 class="city text-3xl text-blue-700"></h2>
+            <div class="mese">Settembre</div>
+            <div class="giorni"></div>
+            <span>Temperatura Massima</span>
+            <div class="max-temp"></div>
+            <span>Temperatura Minima</span>
+            <div class="min-temp"></div>
+            <div class="day-icon"></div>
+          </div>
+          <div class="bottoni">
+            <button class="btn-previous">Indietro</button>
+            <button class="btn-next">Avanti</button>
+          </div>
+
+          <!-- <div class="meteo-container">
             <div class="box">
               <ul class="days space-x-1.5">
                 <li class="giorni"></li>
@@ -71,7 +83,7 @@
                 <li class="day-icon"></li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="mappa" id="map"></div>
         <p>Created by Marco Di Fatta &copy; <span id="current-year"></span></p>

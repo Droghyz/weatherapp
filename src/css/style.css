@@ -22,11 +22,40 @@ li {
   list-style: none;
 }
 
+.meteo-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.city {
+  grid-column: 1 / -1;
+}
+
+.mese {
+  grid-column: 1 / -1;
+}
+
+.giorni {
+  grid-column: 1 / -1;
+}
+
 .day-icon {
   width: 24px;
   height: 24px;
 }
 
+.bottoni {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-next,
+.btn-previous {
+  display: block;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 45px;
+}
 .map-container {
   bottom: 0;
 }
@@ -94,21 +123,4 @@ ul {
 
 .space {
   padding: 10px;
-}
-
-/* Stile per il footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-/* Stile per il testo del footer */
-.footer-content {
-  font-size: 14px;
-  è nuovo!!
 }

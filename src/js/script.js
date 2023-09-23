@@ -7,6 +7,8 @@ const giorni = document.querySelectorAll(".giorni");
 const maxTempUi = document.querySelectorAll(".max-temp");
 const minTempUi = document.querySelectorAll(".min-temp");
 const dayIcon = document.querySelectorAll(".day-icon");
+const btnAvanti = document.querySelector(".btn-next");
+const bntIndietro = document.querySelector(".btn-previous");
 
 //ANNO PER IL COPYRIGHT
 document.getElementById("current-year").textContent = new Date().getFullYear();
@@ -103,14 +105,29 @@ class App {
   }
 
   daysMarkup() {
+    let currentIndex = 0;
     //Ristrutturazione days:
     const newDays = this.days.map((e) =>
       e.slice(5, 10).split("-").reverse().join("/")
     );
     giorni.forEach(function (e, i) {
-      if (i < newDays.length) {
-        e.textContent = newDays[i];
+      if (i === currentIndex) {
+        e.textContent = newDays[currentIndex];
       }
+      btnAvanti.addEventListener("click", function () {
+        if (currentIndex < newDays.length - 1) {
+          currentIndex++;
+          e.textContent = newDays[currentIndex];
+        }
+        console.log(currentIndex);
+      });
+      bntIndietro.addEventListener("click", function () {
+        if (currentIndex > 0) {
+          currentIndex--;
+          e.textContent = newDays[currentIndex];
+        }
+        console.log(currentIndex);
+      });
     });
   }
 
