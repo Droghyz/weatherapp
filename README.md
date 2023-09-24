@@ -15,7 +15,7 @@ I want to see where i am on a map
 
 # 24/09/23:
 
--
+- Fixing bugs
 
 # 23/09/23 (night shift):
 

@@ -124,7 +124,55 @@ class App {
       console.error(err);
     }
   }
-  d;
+
+  updateState(newState) {
+    this.state = {
+      ...this.state,
+      daysIndex: newState,
+    };
+    return this.state;
+  }
+
+  nextPage(dom, value, state) {
+    btnAvanti.addEventListener("click", () => {
+      state = this.state;
+      if (state < value.length - 1) {
+        state++;
+        console.log(state);
+        dom.textContent = value[state];
+        this.updateState(state);
+      }
+    });
+  }
+
+  prevPage(dom, value, state) {
+    bntIndietro.addEventListener("click", () => {
+      state = this.state.daysIndex;
+      console.log(`state: ${state}, this.state:${this.state.daysIndex}`);
+      if (state > 0) {
+        state--;
+        dom.textContent = value[state];
+        this.updateState(state);
+      }
+    });
+  }
+
+  daysMarkup() {
+    let days = this.state.daysIndex;
+    //Ristrutturazione days:
+    const newDays = this.days.map((e) =>
+      e.slice(5, 10).split("-").reverse().join("/")
+    );
+    giorni.forEach((e, i) => {
+      if (i === days) {
+        e.textContent = newDays[days];
+      }
+      this.nextPage(e, newDays, days);
+      this.updateState(days);
+      this.prevPage(e, newDays, this.state.daysIndex);
+    });
+  }
+
   tempMarkupMax() {
     let max = this.state.tempMaxIndex;
     const maxTemp = this.tempMax;
