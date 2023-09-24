@@ -12,6 +12,7 @@ const btnAvanti = document.querySelector(".btn-next");
 const bntIndietro = document.querySelector(".btn-previous");
 const venti = document.querySelectorAll(".venti");
 const probPioggiaEl = document.querySelectorAll(".pioggia");
+const checkState = document.querySelector(".check");
 
 //ANNO PER IL COPYRIGHT
 document.getElementById("current-year").textContent = new Date().getFullYear();
@@ -31,6 +32,14 @@ class App {
     this.ventoForza = null;
     this.probPioggia = null;
     this.currentIndex = 0;
+    this.state = {
+      daysIndex: 0,
+      tempMaxIndex: 0,
+      tempMinIndex: 0,
+      ventiIndex: 0,
+      pioggiaIndex: 0,
+      conditionIndex: 0,
+    };
   }
 
   getPosition() {
@@ -81,7 +90,6 @@ class App {
       this.ventiMarkUp();
       this.conditionMarkup();
       this.pioggiaMarkUp();
-
       ////////////////////////////////
     } catch (err) {
       console.error(err);
@@ -116,49 +124,18 @@ class App {
       console.error(err);
     }
   }
-
-  nextPage(dom, value) {
-    btnAvanti.addEventListener("click", () => {
-      if (this.currentIndex < value.length - 1) {
-        this.currentIndex++;
-        dom.textContent = value[this.currentIndex];
-      }
-      console.log(this.currentIndex);
-    });
-  }
-
-  prevPage(dom, value) {
-    bntIndietro.addEventListener("click", () => {
-      if (this.currentIndex > 0) {
-        this.currentIndex--;
-        dom.textContent = value[this.currentIndex];
-      }
-      console.log(this.currentIndex);
-    });
-  }
-
-  daysMarkup() {
-    //Ristrutturazione days:
-    const newDays = this.days.map((e) =>
-      e.slice(5, 10).split("-").reverse().join("/")
-    );
-    giorni.forEach((e, i) => {
-      if (i === this.currentIndex) {
-        e.textContent = newDays[this.currentIndex];
-      }
-      this.nextPage(e, newDays);
-      this.prevPage(e, newDays);
-    });
-  }
-
+  d;
   tempMarkupMax() {
+    let max = this.state.tempMaxIndex;
     const maxTemp = this.tempMax;
     maxTempUi.forEach((e, i) => {
       if (i < maxTemp.length) {
         e.textContent = Math.floor(maxTemp[i]) + `°`;
       }
+      this.next;
     });
   }
+
   tempMarkupMin() {
     const minTemp = this.tempMin;
     minTempUi.forEach(function (e, i) {
