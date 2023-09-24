@@ -128,38 +128,37 @@ class App {
   updateState(newState) {
     this.state = {
       ...this.state,
-      daysIndex: newState,
+      ...newState,
     };
+    console.log(this.state);
     return this.state;
   }
 
-  nextPage(dom, value, state) {
+  nextPage(dom, value, field) {
     btnAvanti.addEventListener("click", () => {
-      state = this.state;
+      const state = this.state[field];
       if (state < value.length - 1) {
-        state++;
-        console.log(state);
-        dom.textContent = value[state];
-        this.updateState(state);
+        const newState = { [field]: state + 1 };
+        dom.textContent = value[state + 1];
+        this.updateState(newState);
       }
     });
   }
 
-  prevPage(dom, value, state) {
+  prevPage(dom, value, field) {
     bntIndietro.addEventListener("click", () => {
-      state = this.state.daysIndex;
-      console.log(`state: ${state}, this.state:${this.state.daysIndex}`);
+      const state = this.state[field];
       if (state > 0) {
-        state--;
-        dom.textContent = value[state];
-        this.updateState(state);
+        const newState = { [field]: state - 1 };
+        dom.textContent = value[state - 1];
+        this.updateState(newState);
       }
     });
   }
 
   daysMarkup() {
     let days = this.state.daysIndex;
-    //Ristrutturazione days:
+    // Ristrutturazione days:
     const newDays = this.days.map((e) =>
       e.slice(5, 10).split("-").reverse().join("/")
     );
@@ -167,35 +166,39 @@ class App {
       if (i === days) {
         e.textContent = newDays[days];
       }
-      this.nextPage(e, newDays, days);
-      this.updateState(days);
-      this.prevPage(e, newDays, this.state.daysIndex);
+      this.nextPage(e, newDays, "daysIndex");
+      this.prevPage(e, newDays, "daysIndex");
     });
   }
 
   tempMarkupMax() {
-    let max = this.state.tempMaxIndex;
     const maxTemp = this.tempMax;
+    const newMaxTemp = Array.from(maxTemp.map((e) => Math.floor(e) + `°`));
     maxTempUi.forEach((e, i) => {
-      if (i < maxTemp.length) {
-        e.textContent = Math.floor(maxTemp[i]) + `°`;
+      if (i < newMaxTemp.length) {
+        e.textContent = newMaxTemp[i];
       }
-      this.next;
+      this.nextPage(e, newMaxTemp, "tempMaxIndex");
+      this.prevPage(e, newMaxTemp, "tempMaxIndex");
     });
   }
 
   tempMarkupMin() {
     const minTemp = this.tempMin;
-    minTempUi.forEach(function (e, i) {
-      if (i < minTemp.length) {
-        e.textContent = Math.floor(minTemp[i]) + `°`;
+    const newMinTemp = Array.from(minTemp.map((e) => Math.floor(e) + `°`));
+    minTempUi.forEach((e, i) => {
+      if (i < newMinTemp.length) {
+        e.textContent = newMinTemp[i];
       }
+      this.nextPage(e, newMinTemp, "tempMinIndex");
+      this.prevPage(e, newMinTemp, "tempMinIndex");
     });
   }
 
   ventiMarkUp() {
     const direzione = this.ventoDirezione;
     const forza = this.ventoForza;
+    const newForza = Array.from(forza.map((e) => e + ` Km/h`));
     const windDirection = function (value) {
       if (value >= 0 && value <= 45) {
         return "Nord Est";
@@ -222,10 +225,14 @@ class App {
         return "Nord";
       }
     };
-    venti.forEach(function (e, i) {
-      if (i < direzione.length) {
-        e.textContent = `${forza[i]}Km/h ${windDirection(direzione[i])}`;
+    const newDir = direzione.map((e) => windDirection(e));
+    const newForzaDir = newForza.map((e, i) => `${e} ${newDir[i]}`);
+    venti.forEach((e, i) => {
+      if (i < newForzaDir.length) {
+        e.textContent = newForzaDir[i];
       }
+      this.nextPage(e, newForzaDir, "ventiIndex");
+      this.prevPage(e, newForzaDir, "ventiIndex");
     });
   }
 
