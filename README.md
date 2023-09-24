@@ -13,6 +13,11 @@ I want to see where i am on a map
 
 ---
 
+# 23/09/23 (night shift):
+
+- Abstracted nextPage and prevPage function
+- BUG: Se la funzione nextPage e prevPage viene assegnata a più elementi, ad ogni click l'index viene aggiornato più di una volta
+
 # 22/09/23 (night shift):
 
 - Added card and buttons for switching

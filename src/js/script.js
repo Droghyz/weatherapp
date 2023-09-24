@@ -1,4 +1,5 @@
 import "core-js/stable";
+import { nextTick } from "process";
 import "regenerator-runtime/runtime.js";
 ("use strict");
 
@@ -29,6 +30,7 @@ class App {
     this.ventoDirezione = null;
     this.ventoForza = null;
     this.probPioggia = null;
+    this.currentIndex = 0;
   }
 
   getPosition() {
@@ -115,36 +117,43 @@ class App {
     }
   }
 
+  nextPage(dom, value) {
+    btnAvanti.addEventListener("click", () => {
+      if (this.currentIndex < value.length - 1) {
+        this.currentIndex++;
+        dom.textContent = value[this.currentIndex];
+      }
+      console.log(this.currentIndex);
+    });
+  }
+
+  prevPage(dom, value) {
+    bntIndietro.addEventListener("click", () => {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+        dom.textContent = value[this.currentIndex];
+      }
+      console.log(this.currentIndex);
+    });
+  }
+
   daysMarkup() {
-    let currentIndex = 0;
     //Ristrutturazione days:
     const newDays = this.days.map((e) =>
       e.slice(5, 10).split("-").reverse().join("/")
     );
-    giorni.forEach(function (e, i) {
-      if (i === currentIndex) {
-        e.textContent = newDays[currentIndex];
+    giorni.forEach((e, i) => {
+      if (i === this.currentIndex) {
+        e.textContent = newDays[this.currentIndex];
       }
-      btnAvanti.addEventListener("click", function () {
-        if (currentIndex < newDays.length - 1) {
-          currentIndex++;
-          e.textContent = newDays[currentIndex];
-        }
-        console.log(currentIndex);
-      });
-      bntIndietro.addEventListener("click", function () {
-        if (currentIndex > 0) {
-          currentIndex--;
-          e.textContent = newDays[currentIndex];
-        }
-        console.log(currentIndex);
-      });
+      this.nextPage(e, newDays);
+      this.prevPage(e, newDays);
     });
   }
 
   tempMarkupMax() {
     const maxTemp = this.tempMax;
-    maxTempUi.forEach(function (e, i) {
+    maxTempUi.forEach((e, i) => {
       if (i < maxTemp.length) {
         e.textContent = Math.floor(maxTemp[i]) + `°`;
       }
@@ -199,7 +208,6 @@ class App {
     const pioggia = this.probPioggia;
     probPioggiaEl.forEach(function (e, i) {
       if (i < pioggia.length) {
-        console.log(e, i);
         e.textContent = `${pioggia[i]} %`;
       }
     });
