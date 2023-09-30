@@ -13,6 +13,11 @@ I want to see where i am on a map
 
 ---
 
+# 30/09/23:
+
+- Added % rain with Next button
+- New Card!
+
 # 24/09/23:
 
 - Fixing bugs
