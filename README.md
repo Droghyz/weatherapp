@@ -18,6 +18,7 @@ I want to see where i am on a map
 - Added % rain with Next button
 - New UI and Card!
 - Fixed generation of Day and Month
+- Added 2 new function to manage SVG change
 
 # 24/09/23:
 
