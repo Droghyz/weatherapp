@@ -26,30 +26,35 @@
     <section class="text-center p-4 min-h-screen">
       <!-- LOGO -->
       <!-- FINISH LOGO -->
-      <div class="card bg-white center">
-        <div class="container-temp flex flex-col items-center">
-          <div class="meteo-card">
-            <h2 class="city text-3xl text-blue-700"></h2>
-            <div class="mese">Settembre</div>
-            <div class="giorni"></div>
-            <div class="day-icon"></div>
-            <span>Temperatura Massima</span>
-            <div class="max-temp"></div>
-            <span>Temperatura Minima</span>
-            <div class="min-temp"></div>
-            <span>Intensità dei Venti</span>
-            <div class="venti"></div>
-            <span>Probabilità Pioggia</span>
-            <div class="pioggia"></div>
+      <div>
+        <div class="flex flex-col items-center">
+          <!--Card code: Copyright - 2023 zanina-yassine (Yassine Zanina)  -->
+          <div class="card">
+            <div class="container">
+              <!--CONTAINER DESTRA -->
+              <span class="day-icon"></span>
+            </div>
+            <div class="card-header">
+              <span class="city"></span>
+              <span class="giorni"></span>
+            </div>
+            <span class="max-temp"></span>
+            <span class="min-temp"></span>
+            <span class="label-venti">Intensità del vento</span>
+            <span class="venti"></span>
+            <span class="label-pioggia">Probabilità pioggia</span>
+            <span class="pioggia"></span>
           </div>
+          <!--Card code: Copyright - 2023 zanina-yassine (Yassine Zanina)  -->
           <div class="bottoni">
             <button class="btn-previous">Indietro</button>
             <button class="btn-next">Avanti</button>
             <button class="check">Check State</button>
           </div>
+          <div class="card-map">
+            <div class="mappa" id="map"></div>
+          </div>
         </div>
-
-        <div class="mappa" id="map"></div>
         <p>Created by Marco Di Fatta &copy; <span id="current-year"></span></p>
       </div>
     </section>

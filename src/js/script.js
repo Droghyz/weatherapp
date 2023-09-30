@@ -159,15 +159,56 @@ class App {
   daysMarkup() {
     let days = this.state.daysIndex;
     // Ristrutturazione days:
-    const newDays = this.days.map((e) =>
-      e.slice(5, 10).split("-").reverse().join("/")
-    );
+    const newDays = this.days.map((e) => e.slice(8, 10).split("-").join());
+    const months = this.days.map((e) => e.slice(5, 10).split("-")[0]);
+    for (let i = 0; i < months.length; i++) {
+      if (months[i] === "01") {
+        months[i] = "Gennaio";
+      }
+      if (months[i] === "02") {
+        months[i] = "Febbraio";
+      }
+      if (months[i] === "03") {
+        months[i] = "Marzo";
+      }
+      if (months[i] === "04") {
+        months[i] = "Aprile";
+      }
+      if (months[i] === "05") {
+        months[i] = "Maggio";
+      }
+      if (months[i] === "06") {
+        months[i] = "Giugno";
+      }
+      if (months[i] === "10") {
+        months[i] = "Ottobre";
+      }
+      if (months[i] === "07") {
+        months[i] = "Luglio";
+      }
+      if (months[i] === "08") {
+        months[i] = "Agosto";
+      }
+      if (months[i] === "09") {
+        months[i] = "Settembre";
+      }
+      if (months[i] === "10") {
+        months[i] = "Ottobre";
+      }
+      if (months[i] === "11") {
+        months[i] = "Novembre";
+      }
+      if (months[i] === "12") {
+        months[i] = "Dicembre";
+      }
+    }
+    const goodDays = newDays.map((e, i) => e + ` ${months[i]}`);
     giorni.forEach((e, i) => {
       if (i === days) {
-        e.textContent = newDays[days];
+        e.textContent = goodDays[days];
       }
-      this.nextPage(e, newDays, "daysIndex");
-      this.prevPage(e, newDays, "daysIndex");
+      this.nextPage(e, goodDays, "daysIndex");
+      this.prevPage(e, goodDays, "daysIndex");
     });
   }
 

@@ -16,7 +16,8 @@ I want to see where i am on a map
 # 30/09/23:
 
 - Added % rain with Next button
-- New Card!
+- New UI and Card!
+- Fixed generation of Day and Month
 
 # 24/09/23:
 

@@ -31,30 +31,13 @@ li {
   padding: 5px;
 }
 
-.city {
-  grid-column: 1 / -1;
-}
-
-.mese {
-  grid-column: 1 / -1;
-}
-
-.giorni {
-  grid-column: 1 / -1;
-}
-
 .day-icon {
-  width: 24px;
-  height: 24px;
-  margin-left: 80%;
-}
-
-span {
-  grid-column: 1 / 2;
+  width: 100px;
+  height: 100px;
 }
 
 .bottoni {
-  margin-top: 20px;
+  margin: 20px 0;
   display: flex;
   gap: 40px;
 }
@@ -72,6 +55,7 @@ span {
 
 #map {
   height: 300px;
+  width: 300px;
   border-radius: 1rem;
 }
 
@@ -79,58 +63,162 @@ span {
   height: 400px;
 }
 
-.card {
-  border: 2px solid black;
-  width: 360px;
-  margin: 5px auto;
-  height: 800px;
-  border-radius: 45px;
-  -webkit-box-shadow: 13px 8px 14px 0px #000000;
-  box-shadow: 13px 8px 14px 0px #000000;
-}
-
 ul {
   list-style: none;
   justify-content: center;
 }
 
-.tmax,
-.days,
-.tmin,
-.icons {
+/* Css Copyright:
+  Copyright - 2023 zanina-yassine (Yassine Zanina)
+*/
+.card {
+  width: 350px;
+  height: 235px;
+  position: relative;
+  padding: 25px;
+  background: radial-gradient(
+        178.94% 106.41% at 26.42% 106.41%,
+        #fff7b1 0%,
+        rgba(255, 255, 255, 0) 71.88%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    #ffffff;
+  box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01),
+    0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09),
+    0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+  cursor: pointer;
+}
+
+.card-map {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  padding: 25px;
+  background: radial-gradient(
+        178.94% 106.41% at 26.42% 106.41%,
+        #fff7b1 0%,
+        rgba(255, 255, 255, 0) 71.88%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    #ffffff;
+  box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01),
+    0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09),
+    0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+  cursor: pointer;
+}
+
+.container {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 20px;
+  top: -20px;
   display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-}
-
-.box {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 45px;
-  padding: 10px;
-  -webkit-box-shadow: 13px 8px 14px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 13px 8px 14px 0px rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  transform: scale(0.7);
+}
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+/*Primo span dentro l'header (posto + stato)*/
+.city {
+  word-break: break-all;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 135%;
+  color: rgba(87, 77, 51, 0.66);
 }
 
-.giorni {
-  gap: 2px;
+/*DATA*/
+.card-header span:last-child {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 135%;
+  color: rgba(87, 77, 51, 0.33);
 }
 
-.giorni {
-  color: #000;
-}
-
+/*Temperatura*/
 .max-temp {
-  color: #ec7505;
+  position: absolute;
+  left: 30px;
+  bottom: 65px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 77px;
+  color: rgba(87, 77, 51, 1);
 }
 
 .min-temp {
+  position: absolute;
+  left: 30px;
+  bottom: 12px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 77px;
   color: #08b2e3;
 }
 
-.space {
-  padding: 10px;
+.label-venti {
+  position: absolute;
+  left: 160px;
+  bottom: 105px;
 }
+
+.venti {
+  position: absolute;
+  left: 160px;
+  bottom: 55px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 77px;
+  color: rgba(87, 77, 51, 1);
+}
+
+.label-pioggia {
+  position: absolute;
+  left: 160px;
+  bottom: 50px;
+}
+
+.pioggia {
+  position: absolute;
+  left: 160px;
+  bottom: 4px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 77px;
+  color: rgba(87, 77, 51, 1);
+}
+
+/*Bottoncino a destra con Celsius*/
+.temp-scale {
+  width: 80px;
+  height: 36px;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 9px;
+}
+
+/*span dentro il bottoncino*/
+.temp-scale span {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 134.49%;
+  color: rgba(87, 77, 51, 0.66);
+}
+/* Css Copyright:
+  Copyright - 2023 zanina-yassine (Yassine Zanina)
+*/
