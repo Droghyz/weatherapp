@@ -13,6 +13,11 @@ I want to see where i am on a map
 
 ---
 
+# 01/10/23:
+
+- Last Fixes
+- Final push
+
 # 30/09/23:
 
 - Added % rain with Next button
