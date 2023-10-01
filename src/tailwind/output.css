@@ -534,29 +534,40 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.container {
+  width: 100%;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+@media (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 976px) {
+  .container {
+    max-width: 976px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
 }
 
 .flex {
   display: flex;
 }
 
-.h-9 {
-  height: 2.25rem;
-}
-
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-9 {
-  width: 2.25rem;
 }
 
 .flex-col {
@@ -565,27 +576,6 @@ video {
 
 .items-center {
   align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.space-x-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-x-1\.5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.375rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.375rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
@@ -610,16 +600,6 @@ video {
   text-align: center;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-blue-700 {
-  --tw-text-opacity: 1;
-  color: rgb(29 78 216 / var(--tw-text-opacity));
-}
-
 /* 
 COLORI:
   Carrot Orange: #E89005
@@ -641,21 +621,36 @@ li {
 }
 
 .day-icon {
-  width: 24px;
-  height: 24px;
+  width: 100px;
+  height: 100px;
+}
+
+.bottoni {
+  margin: 20px 0;
+  display: flex;
+  gap: 150px;
+}
+
+.btn-next,
+.btn-previous {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  fill: ##47352e;
+}
+
+.map-container {
+  bottom: 0;
 }
 
 #map {
   height: 300px;
+  width: 300px;
   border-radius: 1rem;
 }
 
-.card {
-  border: 2px solid black;
-  width: 360px;
-  margin: 5px auto;
-  border-radius: 45px;
-  box-shadow: 13px 8px 14px 0px #000000;
+.container-temp {
+  height: 400px;
 }
 
 ul {
@@ -663,57 +658,166 @@ ul {
   justify-content: center;
 }
 
-.tmax,
-.days,
-.tmin,
-.icons {
+/* Css Copyright:
+  Copyright - 2023 zanina-yassine (Yassine Zanina)
+*/
+
+.card {
+  width: 350px;
+  height: 235px;
+  position: relative;
+  padding: 25px;
+  background: radial-gradient(
+        178.94% 106.41% at 26.42% 106.41%,
+        #fff7b1 0%,
+        rgba(255, 255, 255, 0) 71.88%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    #ffffff;
+  box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01),
+    0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09),
+    0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+  cursor: pointer;
+}
+
+.card-map {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  padding: 25px;
+  background: radial-gradient(
+        178.94% 106.41% at 26.42% 106.41%,
+        #fff7b1 0%,
+        rgba(255, 255, 255, 0) 71.88%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    #ffffff;
+  box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01),
+    0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09),
+    0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+  cursor: pointer;
+}
+
+.container {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 20px;
+  top: -20px;
   display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-}
-
-.box {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 45px;
-  padding: 10px;
-  box-shadow: 13px 8px 14px 0px rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  transform: scale(0.7);
 }
 
-.giorni {
-  gap: 2px;
-  color: #000;
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
 }
+
+/*Primo span dentro l'header (posto + stato)*/
+
+.city {
+  word-break: break-all;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 135%;
+  color: rgba(87, 77, 51, 0.803);
+}
+
+/*DATA*/
+
+.card-header span:last-child {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 135%;
+  color: rgba(87, 77, 51, 0.46);
+}
+
+/*Temperatura*/
 
 .max-temp {
-  color: #ec7505;
+  position: absolute;
+  left: 30px;
+  bottom: 65px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 77px;
+  color: rgba(87, 77, 51, 1);
 }
 
 .min-temp {
+  position: absolute;
+  left: 30px;
+  bottom: 12px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 77px;
   color: #08b2e3;
 }
 
-.space {
-  padding: 10px;
+.label-venti {
+  position: absolute;
+  left: 160px;
+  bottom: 105px;
 }
 
-/* Stile per il footer */
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.venti {
+  position: absolute;
+  left: 160px;
+  bottom: 55px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 60px;
+  color: rgba(87, 77, 51, 1);
 }
 
-/* Stile per il testo del footer */
-
-.footer-content {
-  font-size: 14px;
+.label-pioggia {
+  position: absolute;
+  left: 160px;
+  bottom: 50px;
 }
+
+.pioggia {
+  position: absolute;
+  left: 160px;
+  bottom: 4px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 77px;
+  color: rgba(87, 77, 51, 1);
+}
+
+/*Bottoncino a destra con Celsius*/
+
+.temp-scale {
+  width: 80px;
+  height: 36px;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 9px;
+}
+
+/*span dentro il bottoncino*/
+
+.temp-scale span {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 134.49%;
+  color: rgba(87, 77, 51, 0.66);
+}
+
+/* Css Copyright:
+  Copyright - 2023 zanina-yassine (Yassine Zanina)
+*/

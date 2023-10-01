@@ -13,10 +13,42 @@ I want to see where i am on a map
 
 ---
 
+# 01/10/23:
+
+- Last Fixes
+- Final push
+
+# 30/09/23:
+
+- Added % rain with Next button
+- New UI and Card!
+- Fixed generation of Day and Month
+- Added 2 new function to manage SVG change
+
+# 24/09/23:
+
+- Fixing bugs
+- Added state for DOM
+- Added manipulation of state
+- Fixing array generation from API's
+
+# 23/09/23 (night shift):
+
+- Abstracted nextPage and prevPage function
+- BUG: Se la funzione nextPage e prevPage viene assegnata a più elementi, ad ogni click l'index viene aggiornato più di una volta
+
+# 22/09/23 (night shift):
+
+- Added card and buttons for switching
+- Added logic for switching days
+- Added new information (winds speec + direction)
+- Added new informnation (probability Rain)
+
 # 19/09/23:
 
 - New Temp Min Color
 - Push new version
+- A new UI is in developing... created a new UI branch
 
 # 18/09/23:
 

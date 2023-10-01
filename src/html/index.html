@@ -24,66 +24,68 @@
   <!-- GRADIENT PER LO SFONDO -->
   <body class="bg-gradient-to-r from-sky-500 to-blue-300">
     <section class="text-center p-4 min-h-screen">
-      <!-- LOGO -->
-      <div class="flex justify-center mt-4 p-4">
-        <img class="w-9 h-9" src="../img/logo.svg" />
-      </div>
-      <div class="card bg-white center">
-        <div class="nome-città my-4">
-          <h2 class="city text-3xl text-blue-700"></h2>
-        </div>
-        <div class="container-temp flex flex-col items-center">
-          <div class="meteo-container">
-            <div class="box">
-              <ul class="days space-x-1.5">
-                <li class="giorni"></li>
-                <li class="giorni"></li>
-                <li class="giorni"></li>
-                <li class="giorni"></li>
-                <li class="giorni"></li>
-                <li class="giorni"></li>
-                <li class="giorni"></li>
-              </ul>
-
-              <ul class="tmax">
-                <li class="max-temp"></li>
-                <li class="max-temp"></li>
-                <li class="max-temp"></li>
-                <li class="max-temp"></li>
-                <li class="max-temp"></li>
-                <li class="max-temp"></li>
-                <li class="max-temp"></li>
-              </ul>
-              <ul class="tmin">
-                <li class="min-temp"></li>
-                <li class="min-temp"></li>
-                <li class="min-temp"></li>
-                <li class="min-temp"></li>
-                <li class="min-temp"></li>
-                <li class="min-temp"></li>
-                <li class="min-temp"></li>
-              </ul>
-              <ul class="icons">
-                <li class="day-icon"></li>
-                <li class="day-icon"></li>
-                <li class="day-icon"></li>
-                <li class="day-icon"></li>
-                <li class="day-icon"></li>
-                <li class="day-icon"></li>
-                <li class="day-icon"></li>
-              </ul>
+      <div>
+        <div class="flex flex-col items-center">
+          <!--Card code: Copyright - 2023 zanina-yassine (Yassine Zanina)  -->
+          <div class="card">
+            <div class="container">
+              <!--CONTAINER DESTRA -->
+              <span class="day-icon"></span>
             </div>
+            <div class="card-header">
+              <span class="city"></span>
+              <span class="giorni"></span>
+            </div>
+            <span class="max-temp"></span>
+            <span class="min-temp"></span>
+            <span class="label-venti">Intensità del vento</span>
+            <span class="venti"></span>
+            <span class="label-pioggia">Probabilità pioggia</span>
+            <span class="pioggia"></span>
+          </div>
+          <!--Card code: Copyright - 2023 zanina-yassine (Yassine Zanina)  -->
+          <div class="bottoni">
+            <!-- INDIETRO -->
+            <span
+              ><svg
+                class="btn-previous"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m13.789 7.155c.141-.108.3-.157.456-.157.389 0 .755.306.755.749v8.501c0 .445-.367.75-.755.75-.157 0-.316-.05-.457-.159-1.554-1.203-4.199-3.252-5.498-4.258-.184-.142-.29-.36-.29-.592 0-.23.107-.449.291-.591zm-.289 7.563v-5.446l-3.522 2.719z"
+                  fill-rule="nonzero"
+                /></svg
+            ></span>
+
+            <!-- AVANTI -->
+            <span>
+              <svg
+                class="btn-next"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m10.211 7.155c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591zm.289 7.563v-5.446l3.522 2.719z"
+                  fill-rule="nonzero"
+                />
+              </svg>
+            </span>
+          </div>
+          <div class="card-map">
+            <div class="mappa" id="map"></div>
           </div>
         </div>
-        <div class="space"></div>
-        <div class="mappa" id="map"></div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-content">
         <p>Created by Marco Di Fatta &copy; <span id="current-year"></span></p>
       </div>
-    </footer>
+    </section>
   </body>
 </html>
