@@ -127,7 +127,6 @@ class App {
       ...this.state,
       ...newState,
     };
-    console.log(this.state);
     return this.state;
   }
 
